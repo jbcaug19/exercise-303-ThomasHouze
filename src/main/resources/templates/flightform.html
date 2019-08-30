@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<h2>Flight Form</h2>
+
+<form action="#" th:action="@{/process}" th:object="${flight}" method="post">
+    <input type="hidden" th:field="*{id}"/>
+    Air Line :<input type="text" th:field="*{airline}" />
+    <span th:if="${#fields.hasErrors('airline')}"
+          th:errors="*{airline}"></span><br />
+
+    Departure :<input type="text" th:field="*{departure}" />
+    <span th:if="${#fields.hasErrors('departure')}"
+          th:errors="*{departure}"></span><br />
+
+    Destination :<input type="text" th:field="*{destination}" />
+    <span th:if="${#fields.hasErrors('destination')}"
+          th:errors="*{destination}"></span>
+
+    Date :<input type="text" th:field="*{date}" />
+    <span th:if="${#fields.hasErrors('date')}"
+          th:errors="*{date}"></span>
+
+    Number :<input type="text" th:field="*{number}" />
+    <span th:if="${#fields.hasErrors('number')}"
+          th:errors="*{number}"></span>
+
+    <br />
+    <input type="submit" value="Submit" />
+
+</form>
+
+
+
+</body>
+</html>
